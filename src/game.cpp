@@ -14,6 +14,6 @@ void game_update(SDL_Event e) {
 }
 
 void game_draw(SDL_Renderer *renderer) {
-	SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
+	SDL_SetRenderDrawColor(renderer, 0xAA, 0x22, 0x22, 0xFF);
 	SDL_RenderFillRect(renderer, &playerRect);
 }

@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 
 				game_update(e);
 
-				SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+				SDL_SetRenderDrawColor(renderer, 0xAA, 0xAA, 0xAA, 0xFF);
 
 				SDL_RenderClear(renderer);
 
