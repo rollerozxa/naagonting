@@ -1,25 +1,19 @@
 #include <SDL2/SDL.h>
 
-int playerX = 0;
-int playerY = 0;
+SDL_Rect playerRect = {0,0,100,100};
 
 void game_update(SDL_Event e) {
-	int x, y;
-	int buttons;
+	int mX, mY;
 
-	buttons = SDL_GetMouseState(&x, &y);
-	playerX = x - 50;
-	playerY = y - 50;
+	SDL_GetMouseState(&mX, &mY);
+	playerRect.x = mX - 50;
+	playerRect.y = mY - 50;
+
+	playerRect.w = mX;
+	playerRect.h = mY;
 }
 
 void game_draw(SDL_Renderer *renderer) {
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
-
-	SDL_Rect playerRect;
-	playerRect.x = playerX;
-	playerRect.y = playerY;
-	playerRect.w = 100;
-	playerRect.h = 100;
-
 	SDL_RenderFillRect(renderer, &playerRect);
 }
